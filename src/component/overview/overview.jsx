@@ -1,0 +1,85 @@
+import styles from "../../styles/comps/overview.module.css"
+
+const Overview = (props) => {
+    return (
+        <div className={styles.overview}>
+            <div className={styles.total}>
+                <div className={styles.balance}>
+                    <p className={styles.figure}>TOTAL BALANCE</p>
+
+                    <div className={styles.details}>
+                        <p className={styles.naira}>
+                            <span class="fa fa-naira-sign"></span> ******
+                        </p>
+                        <p className={styles.show_balance}>
+                            Show balance <input type="checkbox" />
+                        </p>
+                    </div>
+                </div>
+
+                <p className={styles.acct_num}>2020760524 - <span>ACTIVE</span></p>
+
+
+                <p className={styles.username}>JACKSON, UWA IYAMU</p>
+                <div className={styles.acct_detail}>
+                    <p className={styles.naira_sign}>
+                        <span class="fa fa-naira-sign"></span> ******
+                    </p>
+                    <p className={styles.show}>
+                        Show balance <input type="checkbox" />
+                    </p>
+                </div>
+            </div>
+            <div className={styles.ledger}>
+                <p>
+                    Ledger Balance: Hidden
+                </p>
+                <p><span class="fa fa-history"></span> History</p>
+            </div>
+            <div className={styles.eazylinks}>
+                <p className={styles.heading}>eaZyLinks</p>
+                <div className={styles.links}>
+                    <div className={styles.link}>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>QR payments</p>
+                        </div>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>Travel & Leisure</p>
+                        </div>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>Other Bank <br />Transfer</p>
+                        </div>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>Cable TV</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.link_bottom}>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>Cards</p>
+                        </div>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>MyBVN</p>
+                        </div>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>Scheduled <br />Payments</p>
+                        </div>
+                        <div>
+                            <span class="fa fa-lock"></span>
+                            <p className={styles.text}>Customize <br />eaZyLinks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Overview
