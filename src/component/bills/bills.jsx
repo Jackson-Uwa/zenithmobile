@@ -1,4 +1,5 @@
 import styles from "../../styles/comps/bills.module.css";
+import quickteller from "../../assets/quick-teller.png"
 
 const Bills = (props) => {
     return <div className={styles.bills}>
@@ -10,7 +11,7 @@ const Bills = (props) => {
                     <i class="fa fa-calendar"></i>
                     <p className={styles.text}>Zenith Billers</p>
                 </div>
-                <div className={styles.merchant} id={styles.merchant}><i class="fa fa-circle-user"></i><p className={styles.text}>Quickteller<br /> Merchants</p></div>
+                <div className={styles.merchant} id={styles.merchant}><img src={quickteller} alt="quick-teller-icon" /><p className={styles.text}>Quickteller<br /> Merchants</p></div>
                 <div className={styles.merchant}><i class=""></i><p className={styles.text}><br /></p></div>
                 <div className={styles.merchant}><i class=""></i><p className={styles.text}><br /></p></div>
             </div>
