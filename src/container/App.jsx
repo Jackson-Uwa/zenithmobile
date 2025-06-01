@@ -1,11 +1,12 @@
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import Layout from "./layout/layout"
+import Layout from "./layout/layout";
 
-import TransferPage from "../pages/transfer/transfer"
-import OverviewPage from "../pages/overview/overview"
-import AirtimePage from "../pages/airtime/airtime"
-import BillsPage from "../pages/bills/bills"
+import TransferPage from "../pages/transfer/transfer";
+import OverviewPage from "../pages/overview/overview";
+import AirtimePage from "../pages/airtime/airtime";
+import BillsPage from "../pages/bills/bills";
+
 
 function App() {
 

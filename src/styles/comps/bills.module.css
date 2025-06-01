@@ -5,6 +5,88 @@
   overflow-y: scroll;
 }
 
+.bills form label {
+  display: block;
+  padding: 1em 0;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(79, 72, 72);
+}
+
+.bills form select {
+  width: 100%;
+  height: 45px;
+  padding: 1em;
+  letter-spacing: 2px;
+  /* border: 1px solid rgb(211, 204, 204); */
+  border: 1px solid rgb(143, 139, 139);
+  color: rgb(118, 105, 105);
+  font-weight: 600;
+}
+
+.bills form select option {
+  width: 100%;
+}
+
+.bills .merchants {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.bills .merchants::-webkit-scrollbar {
+  display: none;
+}
+
+.payment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #aea7a7;
+  padding: 1em;
+  margin: 1em 0;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#pay_history {
+  color: red;
+}
+
+.bills .merchants .merchant {
+  flex: 1;
+  padding: 1em;
+  width: 80px;
+  /* background: red; */
+  height: 80px;
+  border-radius: 5px;
+  margin: 0 1em 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.bills #merchant {
+  border: 2px solid red;
+  font-size: 15px;
+}
+
+.bills .text {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  letter-spacing: 2px;
+  padding: 0.2em 0 0 0;
+}
+
 @media (min-width: 769px) {
   .bills {
     display: none;
