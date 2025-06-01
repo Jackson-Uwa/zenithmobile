@@ -27,7 +27,7 @@ const Header = (props) => {
         case "/":
             heading = "Overview"
         default:
-            heading = "Bill Payment";
+            heading = "";
     }
 
     return (
