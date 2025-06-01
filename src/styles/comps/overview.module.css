@@ -3,7 +3,6 @@
   height: 755px;
   padding: 1em;
   overflow-y: scroll;
-  /* background: #767474; */
 }
 
 .figure {
@@ -38,7 +37,6 @@
 
 .acct_detail {
   background: white;
-  /* height: 80px; */
   border-radius: 5px;
   color: #ffff;
   padding: 1em 1em 1em 0;
@@ -70,7 +68,6 @@
 .naira_sign {
   font-size: 20px;
   letter-spacing: 2px;
-  /* padding-bottom: 40px; */
   color: #000;
 }
 
@@ -111,8 +108,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* text-align: center; */
-
   padding: 30px 5px 5px 5px;
   margin: 0px 10px 10px 0;
   border-top: 0.1px solid #a9a1a1;
@@ -130,8 +125,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* text-align: center; */
-
   padding: 30px 5px 5px 5px;
   margin: 20px 10px 10px 0;
   border-top: 0.1px solid #a9a1a1;

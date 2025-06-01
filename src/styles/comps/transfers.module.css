@@ -20,7 +20,6 @@
   height: 45px;
   padding: 1em;
   letter-spacing: 2px;
-  /* border: 1px solid rgb(211, 204, 204); */
   border: 1px solid rgb(143, 139, 139);
   color: rgb(118, 105, 105);
   font-weight: 600;
@@ -47,7 +46,6 @@
 .transfers .banks > div {
   flex: 1;
   padding: 1em;
-  /* height: 100px; */
   width: 80px;
   border: 2px solid red;
   border-radius: 5px;
@@ -71,7 +69,6 @@
 
 .intro > p {
   flex: 1;
-  /* border: 2px solid #cec7c7; */
   box-shadow: 1px 3px 2px #3a2f2f;
   background: white;
   color: red;
@@ -92,7 +89,6 @@
 
 .transfers .form_group {
   padding: 1em 0;
-  /* border-bottom: 1px solid #9d9b9b; */
 }
 
 .transfers .bene {
@@ -124,7 +120,6 @@
   margin: 3em 0 0 0;
   width: 100%;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   align-items: center;
 }
