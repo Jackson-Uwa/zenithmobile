@@ -1,6 +1,8 @@
 import styles from "../../styles/comps/sidebar.module.css";
 // import { Fragment } from "react";
 
+import { NavLink } from "react-router-dom";
+
 const SideBar = (props) => {
 
     const signOut = () => {
@@ -15,11 +17,11 @@ const SideBar = (props) => {
             </header>
             <main>
                 <ul>
-                    <li id={styles.overview}><i class="fa fa-bars"></i>Overview</li>
-                    <li><i class="fa fa-exchange-alt"></i>Transfer</li>
-                    <li><i class="fa fa-phone"></i>Airtime Recharge</li>
+                    <li id={styles.overview}><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/"><i class="fa fa-bars"></i>Overview</NavLink></li>
+                    <li><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/transfers"><i class="fa fa-exchange-alt"></i>Transfer</NavLink></li>
+                    <li><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/airtime"><i class="fa fa-phone"></i>Airtime Recharge</NavLink></li>
                     <li><i class="fa fa-calendar"></i>Data Bundles</li>
-                    <li><i class="fa fa-calendar"></i>Bills Payment</li>
+                    <li><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/bills"><i class="fa fa-calendar"></i>Bills Payment</NavLink></li>
                     <li><i class="fa fa-fingerprint"></i>QR payments</li>
                     <li><i class="fa fa-wallet"></i>Connect to eNaira Wallet</li>
                     <li><i class="fa fa-calendar"></i>Scheduled Payments</li>

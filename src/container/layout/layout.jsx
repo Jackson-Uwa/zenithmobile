@@ -22,7 +22,7 @@ const Layout = (props) => {
     return <Fragment>
         <Header toggle={toggle} clicked={handleToggle} />
         {sidebar}
-        <main>
+        <main onClick={() => setToggle(false)}>
             {props.children}
         </main>
         <Footer />
