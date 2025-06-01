@@ -41,38 +41,38 @@ const Overview = (props) => {
                 <div className={styles.links}>
                     <div className={styles.link}>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-fingerprint"></span>
                             <p className={styles.text}>QR payments</p>
                         </div>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-plane-departure"></span>
                             <p className={styles.text}>Travel & Leisure</p>
                         </div>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-bank"></span>
                             <p className={styles.text}>Other Bank <br />Transfer</p>
                         </div>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-television"></span>
                             <p className={styles.text}>Cable TV</p>
                         </div>
                     </div>
 
                     <div className={styles.link_bottom}>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-money-check"></span>
                             <p className={styles.text}>Cards</p>
                         </div>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-fingerprint"></span>
                             <p className={styles.text}>MyBVN</p>
                         </div>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-calendar"></span>
                             <p className={styles.text}>Scheduled <br />Payments</p>
                         </div>
                         <div>
-                            <span class="fa fa-lock"></span>
+                            <span class="fa fa-wallet"></span>
                             <p className={styles.text}>Customize <br />eaZyLinks</p>
                         </div>
                     </div>

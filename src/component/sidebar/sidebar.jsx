@@ -15,21 +15,21 @@ const SideBar = (props) => {
             </header>
             <main>
                 <ul>
-                    <li id={styles.overview}><i class="fa fa-lock"></i>Overview</li>
-                    <li><i class="fa fa-lock"></i>Transfer</li>
-                    <li><i class="fa fa-lock"></i>Airtime Recharge</li>
-                    <li><i class="fa fa-lock"></i>Data Bundles</li>
-                    <li><i class="fa fa-lock"></i>Bills Payment</li>
-                    <li><i class="fa fa-lock"></i>QR payments</li>
-                    <li><i class="fa fa-lock"></i>Connect to eNaira Wallet</li>
-                    <li><i class="fa fa-lock"></i>Scheduled Payments</li>
-                    <li><i class="fa fa-lock"></i>Cards</li>
-                    <li><i class="fa fa-lock"></i>Cheques</li>
-                    <li><i class="fa fa-lock"></i>Travel and Leisure</li>
-                    <li><i class="fa fa-lock"></i>Bank Services</li>
-                    <li><i class="fa fa-lock"></i>Messages</li>
-                    <li><i class="fa fa-lock"></i>Settings</li>
-                    <li><i class="fa fa-lock"></i>Zenith Near Me</li>
+                    <li id={styles.overview}><i class="fa fa-bars"></i>Overview</li>
+                    <li><i class="fa fa-exchange-alt"></i>Transfer</li>
+                    <li><i class="fa fa-phone"></i>Airtime Recharge</li>
+                    <li><i class="fa fa-calendar"></i>Data Bundles</li>
+                    <li><i class="fa fa-calendar"></i>Bills Payment</li>
+                    <li><i class="fa fa-fingerprint"></i>QR payments</li>
+                    <li><i class="fa fa-wallet"></i>Connect to eNaira Wallet</li>
+                    <li><i class="fa fa-calendar"></i>Scheduled Payments</li>
+                    <li><i class="fa fa-money-check"></i>Cards</li>
+                    <li><i class="fa fa-money-check"></i>Cheques</li>
+                    <li><i class="fa fa-plane-departure"></i>Travel and Leisure</li>
+                    <li><i class="fa fa-bank"></i>Bank Services</li>
+                    <li><i class="fa fa-message"></i>Messages</li>
+                    <li><i class="fa fa-gear"></i>Settings</li>
+                    <li><i class="fa fa-location-dot"></i>Zenith Near Me</li>
                 </ul>
             </main>
             <footer>
