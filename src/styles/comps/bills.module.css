@@ -62,8 +62,6 @@
 .bills .merchants .merchant {
   flex: 1;
   padding: 1em;
-  width: 80px;
-  /* background: red; */
   height: 80px;
   border-radius: 5px;
   margin: 0 1em 0 0;
