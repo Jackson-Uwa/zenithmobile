@@ -23,7 +23,7 @@ const Overview = (props) => {
 
                     <div className={styles.details}>
                         <p className={styles.naira}>
-                            <span class="fa fa-naira-sign"></span> <input type={total_bal ? "password" : "text"} value="234,000" id={styles.total} />
+                            <span class="fa fa-naira-sign"></span> <input type={total_bal ? "password" : "text"} value="234,000" id={styles.total} readOnly />
                         </p>
                         <p className={styles.show_balance}>
                             Show balance <input type="checkbox" onClick={setTotalBalance} />
@@ -37,7 +37,7 @@ const Overview = (props) => {
                 <p className={styles.username}>JACKSON, UWA IYAMU</p>
                 <div className={styles.acct_detail}>
                     <p className={styles.naira_sign}>
-                        <span class="fa fa-naira-sign"></span> <input type={acct_bal ? "password" : "text"} value="234,000" id={styles.acct} />
+                        <span class="fa fa-naira-sign"></span> <input type={acct_bal ? "password" : "text"} value="234,000" id={styles.acct} readOnly />
                     </p>
                     <p className={styles.show}>
                         Show balance <input type="checkbox" onClick={setAcctBalance} />
