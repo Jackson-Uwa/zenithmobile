@@ -14,6 +14,39 @@
   letter-spacing: 2px;
 }
 
+#total {
+  background: red;
+  border: none;
+  letter-spacing: 2px;
+  color: rgb(253, 251, 251);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: sans-serif;
+  padding: 0.1em;
+}
+
+#acct {
+  border: none;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  /* font-size: 20px; */
+  font-weight: 700;
+  font-size: 15px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  padding: 0.1em;
+}
+
+#total:focus {
+  border: none;
+  outline: none;
+}
+
+#acct:focus {
+  border: none;
+  outline: none;
+}
+
 .show_balance {
   font-size: 18px;
   letter-spacing: 1px;
@@ -48,7 +81,7 @@
 }
 
 .username {
-  padding: 5px 20px 10px 0;
+  padding: 10px 20px 10px 0;
   color: #000;
   letter-spacing: 1px;
   font-family: sans-serif;
@@ -56,7 +89,7 @@
   font-size: 18px;
 }
 .acct_num {
-  padding: 20px 20px 7px 0;
+  padding: 20px 20px 10px 0;
   border-bottom: 0.5px solid #9a9898;
   letter-spacing: 1px;
   font-size: 18px;
