@@ -1,20 +1,15 @@
 import zenith_logo from "../../assets/zenith.jpg";
-import { useEffect } from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 
 import styles from "../../styles/pages/header.module.css"
 
 const Header = (props) => {
 
-    // let location = useLocation()
-
-    useEffect(() => {
-        console.log(props)
-    }, [location]);
+    const location = useLocation()
 
     let heading;
 
-    switch (location) {
+    switch (location.pathname) {
         case "/transfers":
             heading = "Transfers"
             break;
@@ -27,7 +22,7 @@ const Header = (props) => {
         case "/":
             heading = "Overview"
         default:
-            heading = "";
+            heading = "Overview";
     }
 
     return (
