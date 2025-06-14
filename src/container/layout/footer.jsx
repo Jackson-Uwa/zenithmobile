@@ -5,7 +5,7 @@ const Footer = (props) => {
     return (
         <div className={styles.footer}>
             <div className={styles.overview}>
-                <NavLink exact style={{ color: "#000", textDecoration: "none", textAlign: "center" }} activeStyle={{ color: "red" }} to="/">
+                <NavLink exact style={{ color: "#000", textDecoration: "none", textAlign: "center" }} activeStyle={{ color: "red" }} to="/overview">
                     <p className={styles.icon}><span class="fa fa-chart-bar"></span></p>
                     <p className={styles.text}>Overview</p>
                 </NavLink>

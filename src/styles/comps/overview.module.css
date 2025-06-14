@@ -48,7 +48,7 @@
 }
 
 .show_balance {
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 1px;
 }
 
@@ -57,9 +57,9 @@
   height: 80px;
   border-radius: 5px;
   color: #ffff;
-  padding: 1em;
+  padding: .5em;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .details {
@@ -74,7 +74,7 @@
   color: #ffff;
   padding: 1em 1em 1em 0;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,13 +86,13 @@
   letter-spacing: 1px;
   font-family: sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
 }
 .acct_num {
   padding: 20px 20px 10px 0;
   border-bottom: 0.5px solid #9a9898;
   letter-spacing: 1px;
-  font-size: 18px;
+  font-size: 15px;
   font-family: sans-serif;
   font-weight: 600;
   color: red;
@@ -105,7 +105,7 @@
 }
 
 .show {
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 1px;
   color: #000;
 }
@@ -120,7 +120,7 @@
   padding: 1em;
   height: 30px;
   letter-spacing: 1px;
-  font-size: 18px;
+  font-size: 15px;
   font-family: sans-serif;
   font-weight: 600;
 }

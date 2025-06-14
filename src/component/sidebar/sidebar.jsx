@@ -1,12 +1,13 @@
 import styles from "../../styles/comps/sidebar.module.css";
 // import { Fragment } from "react";
+import { toast } from "react-toastify";
 
 import { NavLink } from "react-router-dom";
 
 const SideBar = (props) => {
 
     const signOut = () => {
-        return window.confirm("Are you sure")
+        return toast.success('Signed out successfully...')
     }
 
     return (
@@ -17,7 +18,7 @@ const SideBar = (props) => {
             </header>
             <main>
                 <ul>
-                    <li id={styles.overview}><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/"><i class="fa fa-bars"></i>Overview</NavLink></li>
+                    <li id={styles.overview}><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/overview"><i class="fa fa-bars"></i>Overview</NavLink></li>
                     <li><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/transfers"><i class="fa fa-exchange-alt"></i>Transfer</NavLink></li>
                     <li><NavLink style={{ textDecoration: "none", color: "#676262" }} to="/airtime"><i class="fa fa-phone"></i>Airtime Recharge</NavLink></li>
                     <li><i class="fa fa-calendar"></i>Data Bundles</li>

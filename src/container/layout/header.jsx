@@ -2,6 +2,7 @@ import zenith_logo from "../../assets/zenith.jpg";
 import { useLocation } from "react-router-dom";
 
 import styles from "../../styles/pages/header.module.css"
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
 
@@ -19,10 +20,10 @@ const Header = (props) => {
         case "/bills":
             heading = "Bill Payment"
             break;
-        case "/":
+        case "/overview":
             heading = "Overview"
         default:
-            heading = "Overview";
+        // heading = "Overview";
     }
 
     return (
@@ -30,7 +31,7 @@ const Header = (props) => {
             <div>  <span onClick={props.clicked} class={props.toggle ? "fa fa-times" : "fa fa-bars"}></span></div>
             <div className={styles.heading}><p>{heading}</p></div>
             <div>
-                <img src={zenith_logo} alt="Zenith_Bank_Logo" />
+                <Link to="/"> <img src={zenith_logo} alt="Zenith_Bank_Logo" /></Link>
             </div>
         </header>
     )

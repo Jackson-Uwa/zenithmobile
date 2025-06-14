@@ -1,22 +1,35 @@
 import styles from "../../styles/comps/transfers.module.css";
 
+import { Link } from "react-router-dom";
+
 const Transfer = (props) => {
+
     return <div className={styles.transfers}>
         <div className={styles.intro}>
-            <p className={styles.transfer_history}>Transfer History</p>
-            <p className={styles.saved}>Saved Transfers</p>
+            <p className={styles.transfer_history}>
+
+                <Link to="/transfer/user/transferHistory" style={{ textDecoration: 'none', color: 'red' }}>
+                    Transfer History
+
+                </Link>
+            </p>
+            <p className={styles.saved}>
+                <Link to="/transfer/user/savedPayments" style={{ textDecoration: 'none', color: 'red' }}>
+                    Saved Transfers
+                </Link>
+            </p>
         </div>
 
         <form>
             <label>Select Transfer Mode</label>
             <div className={styles.banks}>
-                <div>
+                <div className={styles.bank}>
                     <i class="fa fa-user"></i>
                     <p className={styles.text}>Own<br /> Account</p>
                 </div>
-                <div><i class="fa fa-bank"></i><p className={styles.text}>Zenith<br /> Bank</p></div>
-                <div><i class="fa fa-bank"></i><p className={styles.text}>Other<br /> Banks</p></div>
-                <div><i class="fa fa-globe"></i><p className={styles.text}>Foreign<br /> Transfers</p></div>
+                <div className={styles.bank}><i class="fa fa-bank"></i><p className={styles.text}>Zenith<br /> Bank</p></div>
+                <div className={styles.bank}><i class="fa fa-bank"></i><p className={styles.text}>Other<br /> Banks</p></div>
+                <div className={styles.bank}><i class="fa fa-globe"></i><p className={styles.text}>Foreign<br /> Transfers</p></div>
             </div>
             <div className={styles.form_group}>
                 <label>Select Source Account</label>
