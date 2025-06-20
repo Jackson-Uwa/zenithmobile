@@ -16,21 +16,21 @@ const Layout = (props) => {
 
     let sidebar;
 
-    if (toggle) {
+    if (toggle)
         sidebar = <SideBar clicked={handleToggle} />
-    }
 
-    return <div className={styles.layout}>
-        <Fragment>
-
-            <Header toggle={toggle} clicked={handleToggle} />
-            {sidebar}
-            <main onClick={() => setToggle(false)}>
-                {props.children}
-            </main>
-        </Fragment>
-        <Footer />
-    </div>
+    return (
+        <div className={styles.layout}>
+            <div className={styles.content}>
+                <Header toggle={toggle} clicked={handleToggle} />
+                {sidebar}
+                <main onClick={() => setToggle(false)}>
+                    {props.children}
+                </main>
+            </div>
+            <Footer />
+        </div>
+    )
 }
 
 export default Layout

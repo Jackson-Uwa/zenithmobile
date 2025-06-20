@@ -48,8 +48,8 @@ const Login = (props) => {
     });
 
     return (
-
         <div className={style.login}>
+            {/* <div> */}
             <div className={style.logo}>
                 <img src={logo} alt="Zenith_logo" />
             </div>
@@ -92,15 +92,17 @@ const Login = (props) => {
                     <button onClick={() => toast.error("Incorrect user credentials...")} type="submit">Login</button>
                 </form>
                 <div id={style.suggestions}>
-                    <input type="checkbox" />  <Link to="/overview" style={{ textDecoration: 'none' }}><span id={style.remember}>Remember Me? </span></Link>  <span id={style.forgot_password}><Link style={{ textDecoration: 'none', color: 'red' }} to="/forgot-password">Forgot Password?</Link></span>
+                    <input type="checkbox" />  <Link to="/overview" style={{ textDecoration: 'none' }}><span id={style.remember}>Remember Me? </span></Link>  <span id={style.forgot_password}><Link style={{ textDecoration: 'none', color: 'red', fontSize: "14px" }} to="/forgot-password">Forgot Password?</Link></span>
                 </div>
                 <div className={style.signup}>
                     <p>Don't Have An Account? <Link to="/register" style={{ textDecoration: 'none', color: "#000", letterSpacing: "1px" }}>Sign up for free</Link></p>
                 </div>
             </div>
+            {/* </div> */}
             <p className={style.copy}><span>Copyright</span> &copy; 2025 Zenith Bank Plc. All Rights Reserved </p>
-
         </div>
+
+
     );
 };
 

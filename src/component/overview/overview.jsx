@@ -36,7 +36,7 @@ const Overview = (props) => {
                                 <span class="fa fa-naira-sign"></span> <input type={total_bal ? "password" : "text"} value="234,000.00" id={styles.total} readOnly />
                             </p>
                             <p className={styles.show_balance}>
-                                Show balance <input type="checkbox" onClick={setTotalBalance} />
+                                Show balance <span class={total_bal ? "fa fa-toggle-on" : "fa fa-toggle-off"} onClick={setTotalBalance} ></span>
                             </p>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const Overview = (props) => {
                             <span class="fa fa-naira-sign"></span> <input type={acct_bal ? "password" : "text"} value="234,000.00" id={styles.acct} readOnly />
                         </p>
                         <p className={styles.show}>
-                            Show balance <input type="checkbox" onClick={setAcctBalance} />
+                            Show balance <span class={acct_bal ? "fa fa-toggle-on" : "fa fa-toggle-off"} onClick={setAcctBalance}></span>
                         </p>
                     </div>
                 </div>
