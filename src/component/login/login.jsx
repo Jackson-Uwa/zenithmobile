@@ -7,6 +7,10 @@ import logo from "../../assets/zenith.jpg"
 
 const Login = (props) => {
 
+    const assign = () =>
+        window.location.assign("/overview")
+
+
     const [pw, setPw] = useState(false)
 
     const initialValues = {
@@ -92,7 +96,7 @@ const Login = (props) => {
                     <button onClick={() => toast.error("Incorrect user credentials...")} type="submit">Login</button>
                 </form>
                 <div id={style.suggestions}>
-                    <input type="checkbox" />  <span id={style.remember}>Remember Me? </span>  <span id={style.forgot_password}><Link style={{ textDecoration: 'none', color: 'red' }} to="forgot-password">Forgot Password?</Link></span>
+                    <input type="checkbox" />  <span id={style.remember} onClick={assign}>Remember Me? </span>  <span id={style.forgot_password}><Link style={{ textDecoration: 'none', color: 'red' }} to="forgot-password">Forgot Password?</Link></span>
                 </div>
                 <div className={style.signup}>
                     <p>Don't Have An Account? <Link to="/register" style={{ textDecoration: 'none', color: "#000", letterSpacing: "1px" }}>Sign up for free</Link></p>
