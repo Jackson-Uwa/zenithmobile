@@ -1,4 +1,5 @@
-import { Fragment, useState } from "react"
+import { Fragment, useState } from "react";
+import styles from "../../styles/pages/layout.module.css";
 
 import Header from "./header";
 import Footer from "./footer";
@@ -19,14 +20,17 @@ const Layout = (props) => {
         sidebar = <SideBar clicked={handleToggle} />
     }
 
-    return <Fragment>
-        <Header toggle={toggle} clicked={handleToggle} />
-        {sidebar}
-        <main onClick={() => setToggle(false)}>
-            {props.children}
-        </main>
+    return <div className={styles.layout}>
+        <Fragment>
+
+            <Header toggle={toggle} clicked={handleToggle} />
+            {sidebar}
+            <main onClick={() => setToggle(false)}>
+                {props.children}
+            </main>
+        </Fragment>
         <Footer />
-    </Fragment>
+    </div>
 }
 
 export default Layout
