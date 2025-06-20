@@ -1,6 +1,6 @@
 .transfers {
   width: 100%;
-  height: 755px;
+  height: auto;
   padding: 1em;
   overflow-y: scroll;
 }
@@ -118,7 +118,7 @@
 }
 
 .transfers .submit {
-  margin: 3em 0 0 0;
+  margin: 1em 0 0 0;
   width: 100%;
   display: flex;
   justify-content: space-between;

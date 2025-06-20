@@ -1,16 +1,187 @@
-.login {
-  height: 100%;
+@media (max-width: 768px) {
+  .login {
+    background-image: url("../../assets/zenithbg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    padding: 25px 10px 10px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: sans-serif;
+  }
 
-  width: 100%;
-  /* padding: 20px; */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  background-color: bisque;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .login .container {
+    width: 70%;
+    margin: 30px;
+  }
+
+  .login .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 20px 0 0;
+  }
+
+  .login .logo img {
+    width: 50px;
+    height: 50px;
+    animation-name: spin;
+    animation-duration: 7000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes spin {
+    from {
+      -webkit-transform: rotateY(0deg);
+    }
+    to {
+      -webkit-transform: rotateY(360deg);
+    }
+  }
+
+  .error {
+    font-size: 14px;
+    color: red;
+    margin: 15px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .login h1 {
+    text-align: center;
+    padding-bottom: 2px;
+  }
+
+  .login h1 > img {
+    display: none;
+  }
+
+  .login h1 > img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .login .form_group {
+    color: black;
+    margin-top: 1.5em;
+  }
+
+  .login .form_group input {
+    display: block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    height: 30px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: sans-serif;
+    outline: none;
+    border: 1px solid #cecacacc;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .login .form_group input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #049dd9;
+  }
+
+  .password {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .password > input {
+    width: 100%;
+    height: 30px;
+  }
+
+  .password > span {
+    position: absolute;
+    top: 31%;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 0px 0 0;
+    text-align: right;
+    color: #5a5858;
+  }
+
+  #remember {
+    float: left;
+    padding: 0 5px;
+  }
+
+  #forgot_password {
+    float: right;
+    color: red;
+    text-decoration: none;
+  }
+
+  #suggestions {
+    margin-top: 2em;
+  }
+
+  #suggestions > input {
+    padding: 10px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .login button {
+    margin: 10px 0;
+    letter-spacing: 1px;
+    background: #049dd9;
+    border: 1px solid #049dd9;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: aliceblue;
+  }
+
+  .login button:hover {
+    cursor: pointer;
+  }
+
+  .signup {
+    text-align: center;
+    padding: 50px 0 0 0;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a0a0a;
+  }
+
+  .copy {
+    color: rgb(186, 169, 169);
+    font-size: 14px;
+    font-weight: 700;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+    margin-top: 70px;
+  }
+  .copy > span {
+    color: black;
+  }
+}
+
+@media (min-width: 769px) {
+  .login {
+    display: none;
+  }
 }
