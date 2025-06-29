@@ -3,3 +3,8 @@
   margin: 0;
   font-family: sans-serif;
 }
+@media (min-width: 769px) {
+  body {
+    display: none;
+  }
+}
