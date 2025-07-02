@@ -4,6 +4,12 @@ import Welcome from "../greeting/welcome";
 
 import personal_info from "../../assets/personal_info.jpg"
 
+import qr from "../../assets/qr.png";
+import travel from "../../assets/travel.png";
+import tv from "../../assets/tv.png";
+import cards from "../../assets/cards.png";
+import eazy from "../../assets/eazylinks.png";
+
 const Overview = (props) => {
 
     const [modal, setModal] = useState(true)
@@ -64,11 +70,19 @@ const Overview = (props) => {
                     <div className={styles.links}>
                         <div className={styles.link}>
                             <div>
-                                <span class="fa fa-fingerprint"></span>
+                                {/* <span class="fa fa-fingerprint"></span>
+                                 */}
+                                <div className={styles.icon}>
+                                    <img src={qr} alt="QR Payments" />
+                                </div>
                                 <p className={styles.text}>QR payments</p>
                             </div>
                             <div>
-                                <span class="fa fa-plane-departure"></span>
+                                {/* <span class="fa fa-plane-departure"></span>
+                                 */}
+                                <div className={styles.icon}>
+                                    <img src={travel} alt="Travel" />
+                                </div>
                                 <p className={styles.text}>Travel & Leisure</p>
                             </div>
                             <div>
@@ -76,14 +90,20 @@ const Overview = (props) => {
                                 <p className={styles.text}>Other Bank Transfer</p>
                             </div>
                             <div>
-                                <span class="fa fa-television"></span>
+                                {/* <span class="fa fa-television"></span> */}
+                                <div className={styles.icon}>
+                                    <img src={tv} alt="Cable TV" />
+                                </div>
                                 <p className={styles.text}>Cable TV</p>
                             </div>
                         </div>
 
                         <div className={styles.link_bottom}>
                             <div>
-                                <span class="fa fa-money-check"></span>
+                                {/* <span class="fa fa-money-check"></span> */}
+                                <div className={styles.icon}>
+                                    <img src={cards} alt="Cards" />
+                                </div>
                                 <p className={styles.text}>Cards</p>
                             </div>
                             <div>
@@ -95,7 +115,10 @@ const Overview = (props) => {
                                 <p className={styles.text}>Scheduled <br />Payments</p>
                             </div>
                             <div>
-                                <span class="fa fa-wallet"></span>
+                                {/* <span class="fa fa-wallet"></span> */}
+                                <div className={styles.icon}>
+                                    <img src={eazy} alt="Eazy Links" />
+                                </div>
                                 <p className={styles.text}>Customize <br />eaZyLinks</p>
                             </div>
                         </div>
