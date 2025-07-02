@@ -7,10 +7,8 @@ const Transfer = (props) => {
     return <div className={styles.transfers}>
         <div className={styles.intro}>
             <p className={styles.transfer_history}>
-
                 <Link to="/transfer/user/transferHistory" style={{ textDecoration: 'none', color: 'red' }}>
                     Transfer History
-
                 </Link>
             </p>
             <p className={styles.saved}>
