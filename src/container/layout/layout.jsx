@@ -21,14 +21,16 @@ const Layout = (props) => {
 
     return (
         <div className={styles.layout}>
-            <div className={styles.content}>
+            <div className={styles.content}> 
                 <Header toggle={toggle} clicked={handleToggle} />
                 {sidebar}
                 <main onClick={() => setToggle(false)}>
                     {props.children}
                 </main>
             </div>
+            <div>
             <Footer />
+            </div>
         </div>
     )
 }
