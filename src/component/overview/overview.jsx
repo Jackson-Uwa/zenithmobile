@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import styles from "../../styles/comps/overview.module.css";
 import Welcome from "../greeting/welcome";
-
 import personal_info from "../../assets/personal_info.jpg"
+import AuthContext from "../../container/context/auth"
 
 import qr from "../../assets/qr.png";
 import travel from "../../assets/travel.png";
@@ -21,6 +21,8 @@ const Overview = (props) => {
     const [total_bal, setBal] = useState(true)
     const [acct_bal, setAcctBal] = useState(true)
 
+    const { user } = useContext(AuthContext)
+
     const setTotalBalance = () => {
         setBal(!total_bal)
     }
@@ -32,7 +34,7 @@ const Overview = (props) => {
     return (
         <>
             {modal ? <Welcome close={closeModal} /> : null}
-            <div className={styles.overview}>
+            {<div className={styles.overview}>
                 <div className={styles.total}>
                     <div className={styles.balance}>
                         <p className={styles.figure}>TOTAL BALANCE</p>
@@ -49,7 +51,7 @@ const Overview = (props) => {
 
                     <p className={styles.acct_num}>2020760524 - <span>ACTIVE</span></p>
 
-                    <p className={styles.username}>JACKSON, UWA IYAMU</p>
+                    <p className={styles.username}>Welcome {user?.firstName}</p>
                     <div className={styles.acct_detail}>
                         <p className={styles.naira_sign}>
                             <span class="fa fa-naira-sign"></span> <input type={acct_bal ? "password" : "text"} value="234,000.00" id={styles.acct} readOnly />
@@ -128,7 +130,7 @@ const Overview = (props) => {
                     <img src={personal_info} alt="Personal Information" />
                 </div>
             </div>
-
+            }
 
         </>
     )

@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { Link, } from "react-router-dom";
 import { toast } from "react-toastify";
 import style from "../../styles/comps/login.module.css";
-import logo from "../../assets/zenith.jpg"
+import logo from "../../assets/zenith.jpg";
 
 const Login = (props) => {
 
@@ -14,11 +14,30 @@ const Login = (props) => {
         password: "",
     };
 
-    const onSubmit = (values) => {
+    const onSubmit = async (values) => {
         const userLogs = {
             email: values.email,
             password: values.password,
         };
+
+        await fetch("https://auxiliary.it.com/api/v1/users/auth/login", {
+            method: "POST",
+            body: JSON.stringify(userLogs),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => res.json()).then(data => {
+            if (data.success) {
+                sessionStorage.setItem("userInfo", JSON.stringify(data.user))
+                toast.success("Logged in successfully...")
+                setTimeout(() => {
+                    location.assign("/overview");
+                }, 1500);
+            } else {
+                toast.error(data.error)
+            }
+        })
+
     };
 
     const validate = (values) => {
@@ -89,7 +108,7 @@ const Login = (props) => {
                         ) : null}
                     </div>
 
-                    <button onClick={() => toast.error("Incorrect user credentials...")} type="submit">Login</button>
+                    <button type="submit">Login</button>
                 </form>
                 <div id={style.suggestions}>
                     <input type="checkbox" />  <Link to="/overview" style={{ textDecoration: 'none' }}><span id={style.remember}>Remember Me? </span></Link>  <span id={style.forgot_password}><Link style={{ textDecoration: 'none', color: 'red', fontSize: "14px" }} to="/forgot-password">Forgot Password?</Link></span>

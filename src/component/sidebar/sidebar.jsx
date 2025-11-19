@@ -1,19 +1,25 @@
 import styles from "../../styles/comps/sidebar.module.css";
-// import { Fragment } from "react";
 import { toast } from "react-toastify";
-
+import AuthContext from "../../container/context/auth";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
 
 const SideBar = (props) => {
 
+    const { user } = useContext(AuthContext)
+
     const signOut = () => {
-        return toast.success('Signed out successfully...')
+        sessionStorage.removeItem("userInfo");
+        toast.success('Signed out successfully...');
+        return setTimeout(() => {
+            location.assign("/")
+        }, 2000)
     }
 
     return (
         <div className={styles.sidebar}>
             <header>
-                <p className={styles.username}>JACKSON, UWA IYAMU</p>
+                <p className={styles.username}>{user?.firstName} {user?.lastName}</p>
                 <p><span class="fa fa-times" onClick={props.clicked}></span></p>
             </header>
             <main>

@@ -14,6 +14,7 @@ import BillsPage from "../pages/bills/bills";
 import TransferHistory from "../component/transfer/history/transferHistory";
 import SavedPayments from "../component/transfer/savedPayments/savedPayments";
 
+import RegisterPage from "../pages/register/register";
 import LoginPage from "../pages/login/login";
 
 
@@ -24,6 +25,10 @@ function App() {
       <Switch>
         <Route exact path="/">
           <LoginPage />
+        </Route>
+
+        <Route path="/register">
+          <RegisterPage />
         </Route>
 
         <Route path="/overview">
