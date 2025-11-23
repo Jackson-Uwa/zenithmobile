@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import style from '../../styles/comps/register.module.css';
 import logo from "../../assets/zenith.jpg";
+import { toast } from 'react-toastify';
 
 
 const Register = (props) => {
@@ -15,7 +16,7 @@ const Register = (props) => {
         confirmPassword: ""
     }
 
-    const onSubmit = (values) => {
+    const onSubmit = async (values) => {
         const newUser = {
             firstName: values.firstName,
             lastName: values.lastName,
@@ -24,7 +25,23 @@ const Register = (props) => {
             confirmPassword: values.confirmPassword
         }
 
-        console.log(newUser)
+        await fetch("https://auxiliary.it.com/api/v1/users/auth/register", {
+            method: "POST",
+            body: JSON.stringify(newUser),
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }).then(res => res.json()).then(data => {
+            if (data.success) {
+                sessionStorage.setItem("userInfo", JSON.stringify(data.user))
+                toast.success("Signed up successfully");
+                setTimeout(() => location.assign("/overview"))
+            }
+            else {
+                toast.error(data.error)
+            }
+        })
+
     }
 
     const validate = (values) => {
@@ -97,10 +114,11 @@ const Register = (props) => {
                         <input type='password' name='confirmPassword' value={formik.values.confirmPassword} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                         {formik.touched.confirmPassword && formik.errors.confirmPassword ? <div className={style.error}>{formik.errors.confirmPassword}</div> : null}
                     </div>
-
-                    <button type='submit'>Register User</button>
+                    <div className={style.send}>
+                        <button className={style.submit} type='submit'>Register User</button>
+                    </div>
                 </form>
-                <div>Already have an Account? <Link style={{ textDecoration: 'none' }} to='/login'><span>Back to Login</span></Link></div>
+                <div className={style.haveAcct}>Already have an Account? <Link style={{ fontSize: "16px", textDecoration: 'none' }} to='/login'><span>Back to Login</span></Link></div>
 
             </div>
         </div>

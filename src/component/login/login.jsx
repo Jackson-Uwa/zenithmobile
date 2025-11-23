@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useFormik } from "formik";
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router"
 import { toast } from "react-toastify";
 import style from "../../styles/comps/login.module.css";
 import logo from "../../assets/zenith.jpg";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Cookies from "js-cookie"
 
 const Login = (props) => {
 
@@ -27,7 +30,9 @@ const Login = (props) => {
                 "Content-Type": "application/json"
             }
         }).then(res => res.json()).then(data => {
+            // const history = useHistory()
             if (data.success) {
+                Cookies.set("token", data.token)
                 sessionStorage.setItem("userInfo", JSON.stringify(data.user))
                 toast.success("Logged in successfully...")
                 setTimeout(() => {

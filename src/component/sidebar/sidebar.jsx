@@ -1,19 +1,23 @@
 import styles from "../../styles/comps/sidebar.module.css";
 import { toast } from "react-toastify";
+import Cookies from "js-cookie"
 import AuthContext from "../../container/context/auth";
 import { NavLink } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 
 const SideBar = (props) => {
 
     const { user } = useContext(AuthContext)
 
     const signOut = () => {
-        sessionStorage.removeItem("userInfo");
-        toast.success('Signed out successfully...');
-        return setTimeout(() => {
-            location.assign("/")
-        }, 2000)
+        if (confirm("Are you sure?")) {
+            sessionStorage.removeItem("userInfo");
+            Cookies.remove("token")
+            toast.success('Signed out successfully...');
+            return setTimeout(() => {
+                location.assign("/")
+            }, 500)
+        }
     }
 
     return (
