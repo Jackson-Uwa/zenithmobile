@@ -16,7 +16,7 @@ const SideBar = (props) => {
             toast.success('Signed out successfully...');
             return setTimeout(() => {
                 location.assign("/")
-            }, 500)
+            }, 2000)
         }
     }
 

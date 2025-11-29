@@ -34,7 +34,7 @@ const Overview = (props) => {
     return (
         <>
             {modal ? <Welcome close={closeModal} /> : null}
-            {<div className={styles.overview}>
+                <div className={styles.overview}>
                 <div className={styles.total}>
                     <div className={styles.balance}>
                         <p className={styles.figure}>TOTAL BALANCE</p>
@@ -130,7 +130,7 @@ const Overview = (props) => {
                     <img src={personal_info} alt="Personal Information" />
                 </div>
             </div>
-            }
+        
 
         </>
     )

@@ -28,9 +28,9 @@ const Bills = (props) => {
                 <label>Select Category</label>
                 <select>
                     <option value="">Select Category</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="">Bill of Lading</option>
+                    <option value="">Letter of Credit</option>
+                    <option value="">PHCN</option>
                 </select>
             </div>
         </form>

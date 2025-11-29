@@ -4,9 +4,14 @@ import glo from "../../assets/glo.png"
 import airtel from "../../assets/airtel.jpg"
 import mobile from "../../assets/9mobile.jpg"
 
+import { toast } from "react-toastify";
+
 const Airtime = (props) => {
     return <div className={styles.airtime}>
-        <form>
+        <form onSubmit={(e) => {
+            e.preventDefault()
+            toast.warn(`You purchased an airtime`)
+        }}>
             <label>Select an Account</label>
             <select>
                 <option value="">Select an Account</option>

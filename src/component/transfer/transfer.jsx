@@ -1,4 +1,5 @@
 import styles from "../../styles/comps/transfers.module.css";
+import { toast } from "react-toastify";
 
 import { Link } from "react-router-dom";
 
@@ -18,7 +19,10 @@ const Transfer = (props) => {
             </p>
         </div>
 
-        <form>
+        <form onSubmit={(e) => {
+            e.preventDefault()
+            toast.warn(`Transfer successful`)
+        }}>
             <label>Select Transfer Mode</label>
             <div className={styles.banks}>
                 <div className={styles.bank}>

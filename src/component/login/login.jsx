@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router"
+import { useNavigate, useLocation } from "react-router-dom"
 import { toast } from "react-toastify";
 import style from "../../styles/comps/login.module.css";
 import logo from "../../assets/zenith.jpg";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Cookies from "js-cookie"
 
 const Login = (props) => {
+
+    // const navigate = useNavigate()
 
     const [pw, setPw] = useState(false)
 
@@ -25,10 +26,10 @@ const Login = (props) => {
 
         await fetch("https://auxiliary.it.com/api/v1/users/auth/login", {
             method: "POST",
-            body: JSON.stringify(userLogs),
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify(userLogs)
         }).then(res => res.json()).then(data => {
             // const history = useHistory()
             if (data.success) {
@@ -37,7 +38,8 @@ const Login = (props) => {
                 toast.success("Logged in successfully...")
                 setTimeout(() => {
                     location.assign("/overview");
-                }, 1500);
+                    // navigate("/overview")
+                }, 1500)
             } else {
                 toast.error(data.error)
             }

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
+import { toast } from "react-toastify";
 import Cookies from 'js-cookie';
 import { jwtDecode } from 'jwt-decode';
 
@@ -8,19 +9,23 @@ export const AuthProvider = (props) => {
 
     const authState = {
         user: sessionStorage.getItem("userInfo") ? JSON.parse(sessionStorage.getItem("userInfo")) : null,
-        token: Cookies.get("token") ? Cookies.get("token") : null
+        token: Cookies.get("token") ? Cookies.get("token") : ""
     }
 
     const authReducer = (prevState, action) => {
         if (action.type === "setCredentials") {
             try {
-                const token = jwtDecode(Cookies.get("token"))
+                let token;
+                if (prevState.user)
+                    token = jwtDecode(Cookies.get("token"))
+                // console.log(token)
                 return {
                     user: JSON.parse(sessionStorage.getItem("userInfo")),
                     token
                 }
             } catch (error) {
                 console.log(error)
+                toast.error(error)
             }
         }
         return prevState;
