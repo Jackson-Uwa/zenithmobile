@@ -9,7 +9,7 @@ import Cookies from "js-cookie"
 
 const Login = (props) => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [pw, setPw] = useState(false)
 
@@ -31,14 +31,13 @@ const Login = (props) => {
             },
             body: JSON.stringify(userLogs)
         }).then(res => res.json()).then(data => {
-            // const history = useHistory()
             if (data.success) {
                 Cookies.set("token", data.token)
                 sessionStorage.setItem("userInfo", JSON.stringify(data.user))
                 toast.success("Logged in successfully...")
                 setTimeout(() => {
-                    location.assign("/overview");
-                    // navigate("/overview")
+                    // location.assign("/overview");
+                    navigate("/overview")
                 }, 1500)
             } else {
                 toast.error(data.error)

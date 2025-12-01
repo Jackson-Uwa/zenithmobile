@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 import {
   ToastContainer
 } from 'react-toastify'
@@ -22,42 +22,25 @@ function App() {
 
   return (
     <Layout>
-      <Switch>
-        <Route exact path="/">
-          <LoginPage />
-        </Route>
+      <Routes>
+        <Route exact path="/" element={<LoginPage />} />
 
-        <Route path="/register">
-          <RegisterPage />
-        </Route>
+        <Route path="/register" element={<RegisterPage />} />
 
-        <Route path="/overview">
-          <OverviewPage />
-        </Route>
+        <Route path="/overview" element={<OverviewPage />} />
 
-        <Route path="/airtime">
-          <AirtimePage />
-        </Route>
+        <Route path="/airtime" element={<AirtimePage />} />
 
-        <Route path="/transfers">
-          <TransferPage />
-        </Route>
+        <Route path="/transfers" element={<TransferPage />} />
 
-        <Route path="/bills">
-          <BillsPage />
-        </Route>
+        <Route path="/bills" element={<BillsPage />} />
 
-        <Route path="/transfer/user/transferHistory">
-          <TransferHistory />
-        </Route>
+        <Route path="/transfer/user/transferHistory" element={<TransferHistory />} />
 
-        <Route path="/transfer/user/savedPayments">
-          <SavedPayments />
-        </Route>
+        <Route path="/transfer/user/savedPayments" element={<SavedPayments />} />
 
-
-        <Redirect to="/" />
-      </Switch>
+        {/* <Redirect to="/" /> */}
+      </Routes>
       <ToastContainer
         position="top-right"
         autoClose={1000}
