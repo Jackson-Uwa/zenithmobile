@@ -1,3 +1,4 @@
+import { AuthProvider } from "../container/context/auth";
 import { Routes, Route, } from "react-router-dom";
 import {
   ToastContainer
@@ -17,17 +18,24 @@ import SavedPayments from "../component/transfer/savedPayments/savedPayments";
 import RegisterPage from "../pages/register/register";
 import LoginPage from "../pages/login/login";
 
+import NotFound from "../component/404/404";
 
 function App() {
 
   return (
     <Layout>
+      {/* <Route index path="/" element={<LoginPage />} /> */}
       <Routes>
-        <Route exact path="/" element={<LoginPage />} />
+        <Route index path="/" element={<LoginPage />} />
 
         <Route path="/register" element={<RegisterPage />} />
 
-        <Route path="/overview" element={<OverviewPage />} />
+        <Route
+          path="/overview"
+          element={<AuthProvider>
+            <OverviewPage />
+          </AuthProvider>
+          } />
 
         <Route path="/airtime" element={<AirtimePage />} />
 
@@ -39,7 +47,9 @@ function App() {
 
         <Route path="/transfer/user/savedPayments" element={<SavedPayments />} />
 
-        {/* <Redirect to="/" /> */}
+
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
       <ToastContainer
         position="top-right"

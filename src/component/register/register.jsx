@@ -1,9 +1,10 @@
-import { useReducer } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import style from '../../styles/comps/register.module.css';
 import logo from "../../assets/zenith.jpg";
 import { toast } from 'react-toastify';
+import Cookies from "js-cookie"
+
 
 
 const Register = (props) => {
@@ -33,6 +34,7 @@ const Register = (props) => {
             }
         }).then(res => res.json()).then(data => {
             if (data.success) {
+                Cookies.set("jwt", data.token)
                 sessionStorage.setItem("userInfo", JSON.stringify(data.user))
                 toast.success("Signed up successfully");
                 setTimeout(() => location.assign("/overview"))

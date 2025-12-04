@@ -32,11 +32,10 @@ const Login = (props) => {
             body: JSON.stringify(userLogs)
         }).then(res => res.json()).then(data => {
             if (data.success) {
-                Cookies.set("token", data.token)
+                Cookies.set("jwt", data.token)
                 sessionStorage.setItem("userInfo", JSON.stringify(data.user))
                 toast.success("Logged in successfully...")
                 setTimeout(() => {
-                    // location.assign("/overview");
                     navigate("/overview")
                 }, 1500)
             } else {

@@ -9,22 +9,22 @@ export const AuthProvider = (props) => {
 
     const authState = {
         user: sessionStorage.getItem("userInfo") ? JSON.parse(sessionStorage.getItem("userInfo")) : null,
-        token: Cookies.get("token") ? Cookies.get("token") : ""
+        token: Cookies.get("jwt") ? Cookies.get("jwt") : ""
     }
 
     const authReducer = (prevState, action) => {
         if (action.type === "setCredentials") {
             try {
-                let token;
+                let token = null
                 if (prevState.user)
-                    token = jwtDecode(Cookies.get("token"))
-                // console.log(token)
+                    token = jwtDecode(sessionStorage.getItem("userInfo"))
+                // token = jwtDecode(Cookies.get("jwt"), { header: true })
+                console.log(token)
                 return {
                     user: JSON.parse(sessionStorage.getItem("userInfo")),
                     token
                 }
             } catch (error) {
-                console.log(error)
                 toast.error(error)
             }
         }
@@ -35,7 +35,7 @@ export const AuthProvider = (props) => {
 
     useEffect(() => {
         dispatch({ type: "setCredentials" })
-    }, [state.user])
+    }, [Cookies.get("jwt")])
 
     return <AuthContext.Provider value={{ user: state.user }}>
         {props.children}

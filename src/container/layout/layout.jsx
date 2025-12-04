@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import styles from "../../styles/pages/layout.module.css";
+import { AuthProvider } from "../context/auth";
 
 import Header from "./header";
 import Footer from "./footer";
@@ -17,11 +18,13 @@ const Layout = (props) => {
     let sidebar;
 
     if (toggle)
-        sidebar = <SideBar clicked={handleToggle} />
+        sidebar = <AuthProvider>
+            <SideBar clicked={handleToggle} />
+        </AuthProvider>
 
     return (
         <div className={styles.layout}>
-            <div className={styles.content}> 
+            <div className={styles.content}>
                 <Header toggle={toggle} clicked={handleToggle} />
                 {sidebar}
                 <main onClick={() => setToggle(false)}>
@@ -29,7 +32,7 @@ const Layout = (props) => {
                 </main>
             </div>
             <div>
-            <Footer />
+                <Footer />
             </div>
         </div>
     )

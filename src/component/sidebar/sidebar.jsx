@@ -8,19 +8,29 @@ import { useContext } from "react";
 
 const SideBar = (props) => {
 
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const signOut = () => {
         if (confirm("Are you sure?")) {
             sessionStorage.removeItem("userInfo");
-            Cookies.remove("token")
-            toast.success('Signed out successfully...');
-            return setTimeout(() => {
-                navigate("/")
-            }, 2000)
+            Cookies.remove("jwt");
+            navigate("/");
         }
+        /*  if (confirm("Are you sure?")) {
+              fetch("/https://auxiliary.it.com/api/v1/users/auth/logout", {
+                  method: "POST",
+              }).then(res => res.json()).then(data => {
+                  if (data.success) {
+                      sessionStorage.removeItem("userInfo");
+                      Cookies.remove("jwt");
+                      navigate("/");
+                  } else {
+                      toast.error("Server error");
+                  }
+              })
+          } */
     }
 
     return (
