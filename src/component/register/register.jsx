@@ -120,7 +120,7 @@ const Register = (props) => {
                         <button className={style.submit} type='submit'>Register User</button>
                     </div>
                 </form>
-                <div className={style.haveAcct}>Already have an Account? <Link style={{ fontSize: "16px", textDecoration: 'none' }} to='/login'><span>Back to Login</span></Link></div>
+                <div className={style.haveAcct}>Already have an Account? <Link style={{ fontSize: "16px", textDecoration: 'none' }} to='/'><span>Back to Login</span></Link></div>
 
             </div>
         </div>
