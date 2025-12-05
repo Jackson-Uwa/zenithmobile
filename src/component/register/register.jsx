@@ -39,7 +39,9 @@ const Register = (props) => {
                 Cookies.set("jwt", data.token)
                 sessionStorage.setItem("userInfo", JSON.stringify(data.user))
                 toast.success("Signed up successfully");
-                navigate("/overview")
+                setTimeout(() => {
+                    navigate("/overview")
+                }, 1500)
             }
             else {
                 toast.error(data.error)
