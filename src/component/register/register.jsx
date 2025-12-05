@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import style from '../../styles/comps/register.module.css';
 import logo from "../../assets/zenith.jpg";
@@ -8,6 +8,8 @@ import Cookies from "js-cookie"
 
 
 const Register = (props) => {
+
+    const navigate = useNavigate()
 
     const initialValues = {
         firstName: "",
@@ -37,7 +39,7 @@ const Register = (props) => {
                 Cookies.set("jwt", data.token)
                 sessionStorage.setItem("userInfo", JSON.stringify(data.user))
                 toast.success("Signed up successfully");
-                setTimeout(() => location.assign("/overview"))
+                navigate("/overview")
             }
             else {
                 toast.error(data.error)
