@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
 import style from "../../styles/comps/login.module.css";
 import logo from "../../assets/zenith.jpg";

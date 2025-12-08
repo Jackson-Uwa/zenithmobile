@@ -31,7 +31,7 @@ const Header = (props) => {
             <div>  <span onClick={props.clicked} class={props.toggle ? "fa fa-times" : "fa fa-bars"}></span></div>
             <div className={styles.heading}><p>{heading}</p></div>
             <div>
-                <Link to="/"> <img src={zenith_logo} alt="Zenith_Bank_Logo" /></Link>
+                <img src={zenith_logo} alt="Zenith_Bank_Logo" />
             </div>
         </header>
     )
