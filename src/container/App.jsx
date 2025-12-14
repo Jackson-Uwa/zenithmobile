@@ -18,17 +18,23 @@ import SavedPayments from "../component/transfer/savedPayments/savedPayments";
 import RegisterPage from "../pages/register/register";
 import LoginPage from "../pages/login/login";
 
+import ForgotPasswordPage from "../pages/forgotPassword/forgotPassword";
+import ResetPasswordPage from "../pages/resetPassword/resetPassword";
+
 import NotFound from "../component/404/404";
 
 function App() {
 
   return (
     <Layout>
-      {/* <Route index path="/" element={<LoginPage />} /> */}
       <Routes>
         <Route index path="/" element={<LoginPage />} />
 
         <Route path="/register" element={<RegisterPage />} />
+
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
 
         <Route
           path="/overview"
@@ -47,7 +53,6 @@ function App() {
 
         <Route path="/transfer/user/savedPayments" element={<SavedPayments />} />
 
-
         <Route path="*" element={<NotFound />} />
 
       </Routes>
@@ -55,7 +60,7 @@ function App() {
         position="top-right"
         autoClose={1000}
         hideProgressBar={false}
-        newestOnTop={false}
+        newestOnTop={true}
         closeOnClick={false}
         rtl={false}
         pauseOnFocusLoss
